@@ -1,1 +1,7 @@
 <h1>the users page</h1>
+
+<% @users.each do |u| %>
+<ul>
+  <li><%= u.username %></li>
+</ul>
+<% end %>
