@@ -7,3 +7,4 @@ eat such a great donut in the city that they will take a photo of it and need to
 Technologies used:
 This project was built in Ruby using Rails.
 Mockup and wire framing were done in Balsamiq.  
+https://donutstagram.mybalsamiq.com/projects/donutstagram/ERD
