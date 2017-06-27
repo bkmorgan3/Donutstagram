@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:login][:password])
       #generate a cookie for the user
       #redirect them somewhere
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      session[:current_user_id] = @user.id
+      redirect_to posts_path
     else
       #redirect them back to the login page
       redirect_to login_path
