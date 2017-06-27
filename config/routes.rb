@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy', as: :logout
 
+
+  get '/posts' => 'posts#index'
 end
