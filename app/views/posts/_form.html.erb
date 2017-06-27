@@ -1,0 +1,17 @@
+<h1> New Post</h1>
+
+
+<%= form_for @post do |f| %>
+<div>
+  <%= f.label :image, 'Image:' %>
+  <%= f.file_field :image %>
+</div>
+<div>
+  <%= f.label :caption, 'Caption:' %>
+  <%= f.text_field :caption, placeholder: 'Caption...' %>
+</div>
+
+<div>
+  <%= f.submit "Eat It!" %>
+</div>
+  <% end %>
