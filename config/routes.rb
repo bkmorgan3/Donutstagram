@@ -8,4 +8,14 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show', as: :user
 
   post 'users' => 'users#create'
+
+
+
+
+  get '/login' => 'sessions#new', as: :login
+
+  post '/login' => 'sessions#create'
+
+  delete '/logout' => 'sessions#destroy', as: :logout
+
 end

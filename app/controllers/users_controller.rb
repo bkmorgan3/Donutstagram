@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(set_user)
+    @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Sign up was succesful."
       redirect_to users_path
@@ -30,10 +30,11 @@ end
 
 
   def destroy
+
   end
 
   private
-  def set_user
+  def user_params
     params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
   end
 
