@@ -13,16 +13,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new({
-      image: params[:post][:image],
-      caption: params[:post][:caption]
-      })
-    if @post.save
-      redirect_to posts_path
-    else
-      redirect_to posts_new_path
-  end
-end
+    p params.inspect
+    @post = Post.new(post_params)
+      if @post.save
+        redirect_to posts_path
+
+      else
+        p params[:post][:image]
+        render 'new'
+    end
+ end
 
   def edit
   end
@@ -31,6 +31,12 @@ end
   end
 
   def destroy
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:image, :caption)
   end
 
 end
