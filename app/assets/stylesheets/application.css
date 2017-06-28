@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+
+#greeting {
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+  font-size: 80px;
+  text-align: center;
+  margin-left: 400px;
+  margin-top: 100px;
+}

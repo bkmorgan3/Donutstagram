@@ -1,6 +1,15 @@
 class SessionsController < ApplicationController
 
+  def index
+    if params[:status] == 'activated'
+      @users = User.activated
+    else
+      @users = User.unactivated
+    end
+  end
+
   def new
+    @user = User.new
   end
 
   def create
