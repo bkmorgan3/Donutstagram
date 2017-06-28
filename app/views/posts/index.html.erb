@@ -4,9 +4,19 @@
 
 <div id="all-posts" class="container">
   <h1>All Posts</h1>
+    <% @posts.each do |p| %>
 
-  <% @posts.each do |p| %>
-  <%= image_tag(p.image(:medium)) %>
-  <%= p.caption %>
-  <% end %>
+    <div id="donut-post">
+      <div id="donut-image">
+      <%= image_tag(p.image(:medium)) %>
+    </div>
+
+    <div id="donut-caption">
+      <%= p.caption %>
+    </div>
+    <p> <%= link_to 'Show', post_path %> </p>
+    <p> <%= link_to "Delete", post_path, method: :delete, data: {confirm: "verdad?"} %></p>
+  </div>
+
+    <% end %>
 </div>

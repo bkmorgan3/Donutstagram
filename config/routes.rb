@@ -23,14 +23,14 @@ Rails.application.routes.draw do
 
 
 
-  get '/posts' => 'posts#index'
+  # get '/posts' => 'posts#index', as: :posts
+  #
+  # get '/posts/new' => 'posts#new'
+  #
+  # post '/posts' => 'posts#create'
+  #
+  # get '/posts/:id' => 'posts#show', as: :post
 
-  get '/posts/new' => 'posts#new'
-
-  post '/posts' => 'posts#create'
-
-
-
-
+resources :posts
 
 end

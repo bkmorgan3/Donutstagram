@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+#before_action :authorize, only: [:new, :index]
+
   def index
     @posts = Post.order('created_at DESC')
   end
@@ -18,8 +20,8 @@ class PostsController < ApplicationController
     @post.user = User.first
       if @post.save
         redirect_to posts_path
-
       else
+        p @post.error
         p params[:post][:image]
         render 'new'
     end
