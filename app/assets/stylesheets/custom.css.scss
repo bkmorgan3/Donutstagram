@@ -1,2 +1,38 @@
+$navbar-default-bg: #42bcf4;
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
+
+#greeting {
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
+  font-size: 80px;
+  text-align: center;
+  margin-left: 400px;
+  margin-top: 100px;
+}
+
+body {
+  background: url('../images/phone.jpg')
+}
+
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#all-posts {
+  text-align: center;
+}

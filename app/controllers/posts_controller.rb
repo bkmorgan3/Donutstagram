@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   def create
     p params.inspect
     @post = Post.new(post_params)
+    @post.user = User.first
       if @post.save
         redirect_to posts_path
 
