@@ -1,7 +1,8 @@
 <h1>the users page</h1>
-
-<% @users.each do |u| %>
-<ul>
-  <li><%= u.username %></li>
-</ul>
-<% end %>
+<div class="jumbotron">
+  <ul>
+    <% @users.each do |u| %>
+    <li class="list-group-item"><%= link_to u.username, user_path(u) %></li>
+  <% end %>
+  </ul>
+</div>
