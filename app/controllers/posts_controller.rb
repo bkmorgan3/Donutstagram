@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def create
     p params.inspect
     @post = Post.new(post_params)
-    @post.user = User.first
+    @post.user = User.last
       if @post.save
         redirect_to posts_path
       else
@@ -33,6 +33,13 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.caption = params[:post][:caption]
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      render 'edit'
+    end
   end
 
   def destroy

@@ -11,14 +11,20 @@ class UsersController < ApplicationController
 
     def create
       @user = User.new(user_params)
+      @user.email.downcase!
       if @user.save
-        session[:user_id] = @user.id.to_s
+        flash[:notice] = "Account crated succesfully"
         redirect_to posts_path
       else
+        flash[:notice] = "Ooops, couldnt create account.  Make sure youre using  valid email and password."
         render :new
       end
     end
 
+
+    def show
+      @user = User.find(params[:id])
+    end
 
     private
     def user_params

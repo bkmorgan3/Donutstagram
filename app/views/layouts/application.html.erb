@@ -11,9 +11,24 @@
 
   <body>
 
-    <%= render 'layouts/messages' %>
+
+  
+    <% if notice %>
+      <%= notice %>
+    <% end %>
+
+    <% if alert %>
+      <%= alert %>
+    <% end %>
+
+
     <div class="container">
-    <%= yield %>
+      <%= yield %>
+
+
+
   </div>
+
+
   </body>
 </html>

@@ -13,6 +13,6 @@
 </div>
 
 <div>
-  <%= f.submit "Share Donut", class: "btn btn-primary" %>
+  <%= f.submit(@post.new_record? ? "Share Donut" : "Update Donut", class: "btn btn-primary") %>
 </div>
   <% end %>

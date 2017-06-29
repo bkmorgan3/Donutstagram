@@ -1,9 +1,23 @@
 <%= render 'nav' %>
 
 
-<%= render 'form' %>
+
+<%= form_for @post do |f| %>
+
+<div class="form-group">
+  <%= f.label :caption, 'Caption:' %>
+  <%= f.text_field :caption, placeholder: 'Caption...' %>
+</div>
+
+<div>
+  <%= f.submit "Edit Donut", class: "btn btn-primary" %>
+</div>
+  <% end %>
+
+
+
 
 
 <div class="col-xs-4 col-xs-offset-4">
-   <%= link_to "Go back to the donuts", posts_path %> 
+   <%= link_to "Go back to the donuts", posts_path %>
     </div>

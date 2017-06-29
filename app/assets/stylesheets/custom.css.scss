@@ -15,8 +15,6 @@ $navbar-default-bg: #42bcf4;
 }
 
 
-
-
 #logo {
   float: left;
   font-size: 1.7em;
@@ -47,4 +45,19 @@ $navbar-default-bg: #42bcf4;
   margin: 0 auto;
   min-width: 640px;
   height: 640px;
+}
+
+#logout-button{
+  float: right;
+  text-decoration: none;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+}
+.nav-item{
+  margin: 9px;
+  padding: 6px;
+  color: white;
 }
