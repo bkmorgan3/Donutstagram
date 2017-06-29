@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    redirect_to login_path, alert: "You must be logged in to access this page" if current_user.nil?
   end
 end
+
+
+#    redirect_to login_path, alert: "You must be logged in to access this page" if current_user.nil?
