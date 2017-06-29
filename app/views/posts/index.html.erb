@@ -2,11 +2,11 @@
 <%= render 'nav' %>
 
 
-<div id="all-posts" class="container">
+<div class="all-posts" class="container">
   <h1>All Posts</h1>
     <% @posts.each do |p| %>
 
-    <div id="donut-post">
+    <div class="donut-post">
       <div id="donut-image">
       <%= image_tag(p.image(:medium)) %>
     </div>

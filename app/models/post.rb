@@ -19,7 +19,7 @@ class Post < ApplicationRecord
 
        validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-      validates :user_id, presence: true
+       validates :user_id, presence: true
 end
 #{ content_type: ["image/jpg", "image/jpeg", "image/png"]}
 #do_not_validate_attachment_file_type :image
