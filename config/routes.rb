@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'pages#index'
 
+  get '/pages/secret' => 'pages#secret'
+
 
   get '/users' => 'users#index', as: :users
 
