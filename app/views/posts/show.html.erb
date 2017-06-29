@@ -1,2 +1,11 @@
 <%= render 'nav' %>
-<%= link_to @post %>
+
+<div id="each-post">
+  <div>
+    <%= image_tag(@post.image(:medium)) %>
+  </div>
+  <div>
+    <%= @post.caption %>
+  </div>
+
+</div>

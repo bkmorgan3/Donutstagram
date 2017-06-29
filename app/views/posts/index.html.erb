@@ -14,8 +14,7 @@
     <div id="donut-caption">
       <%= p.caption %>
     </div>
-    <p> <%= link_to 'Show', post_path %> </p>
-    <p> <%= link_to "Delete", post_path, method: :delete, data: {confirm: "verdad?"} %></p>
+    <p> <%= link_to "Show", post_path(p.id) %> </p>
   </div>
 
     <% end %>

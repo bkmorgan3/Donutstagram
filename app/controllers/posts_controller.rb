@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order('created_at DESC')
+
   end
 
   def show
@@ -34,6 +35,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
