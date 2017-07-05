@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :update, :show]
   #to authorize to see user without being loggged in
   #before_action :authorize
     def index
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       @user.email.downcase!
       if @user.save
-        flash[:notice] = "Account crated succesfully"
+        flash[:notice] = "Account created succesfully, #{user.username}"
         redirect_to login_path
       else
         flash[:notice] = "Ooops, couldnt create account.  Make sure youre using  valid email and password."
@@ -21,14 +22,32 @@ class UsersController < ApplicationController
       end
     end
 
+    def edit
+
+    end
+
+    def update
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        flash[:success] = "Your account was updated successfully."
+        redirect_to posts_path
+      else
+        render 'edit'
+      end
+    end
 
     def show
-      @user = User.find(params[:id])
     end
+
+
 
     private
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def set_user
+        @user = User.find(params[:id])
     end
   end
 #    current_user = User.find_by_id(session[:current_user_id])
