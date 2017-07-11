@@ -15,5 +15,5 @@ https://donutstagram.mybalsamiq.com/projects/donutstagram/ERD
 I used the IG icon fro FontAwesome, got font from GoogleFonts.
 
 
-# gems installed:<hr>
+# Gems installed:<hr>
 paperclip, .env, aws-sdk
