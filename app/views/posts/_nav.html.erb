@@ -1,58 +1,39 @@
 <div class="container">
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-
-
-      <%= link_to "All Donuts", root_path, class: "navbar-brand", id: "logo" %>
-
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <span><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></span>
-
-
-
-          <li>  <%= link_to "Add Donut", new_post_path %> </li>
-
-
-          <% if current_user %>
-        <li class="nav-item">  <%= "User:  #{current_user.name}" %> </li>
-          <% else %>
-          <%= link_to 'Home', root_path %> | <%= link_to 'Log In', login_path %> or <%= link_to 'Sign Up',new_user_path %>
-          <% end %>
-
-      </ul>
-
-       <span id="logout-button">
-         <% if current_user %>
-           <%= link_to 'Logout', logout_path, method: :delete %>
-           <% end %>
-      </span>
-
-      <ul class="nav navbar-nav navbar-right">
-        <% if logged_in? %>
-      
-        <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-        <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
-        <li><%= link_to "View your profile", user_path(current_user) %></li>
-        <li><a href="#">Something else here</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="#">Separated link</a></li>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <%= link_to "All Donuts", root_path, class: "navbar-brand", id: "logo" %>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <span><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></span>
+            <li>  <%= link_to "Add Donut", new_post_path %> </li>
+            <% if current_user %>
+              <li class="nav-item">  <%= "User:  #{current_user.email}" %> </li>
+            <% else %>
+              <%= link_to 'Home', root_path %> | <%= link_to 'Log In', login_path %> or <%= link_to 'Sign Up',new_user_path %>
+            <% end %>
         </ul>
-        </li>
-        <% else %>
-        <li><%= link_to 'Log in', login_path %></li>
-        <li><%= link_to 'Sign up', new_user_path %></li>
-        <% end %>
-      </ul>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
+         <span id="logout-button">
+           <% if current_user %>
+             <%= link_to 'Logout', logout_path, method: :delete %>
+             <% end %>
+        </span>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "View your profile", user_path(current_user) %></li>
+            </ul>
+          </li>
+          <% else %>
+          <li><%= link_to 'Log in', login_path %></li>
+          <li><%= link_to 'Sign up', new_user_path %></li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 </div>

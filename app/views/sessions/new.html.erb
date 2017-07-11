@@ -1,16 +1,13 @@
 <div class="center jumbotron">
-
-<h1> Returning User?</h1>
-<h1>Log In</h1>
-
-<%= form_for :login, {url: login_path} do |f| %>
-<div>
-  <%= f.email_field :email, placeholder: 'email'  %>
-</div>
-<div>
-  <%= f.password_field :password, placeholder: "password" %>
-</div>
-
-<%= f.submit 'Log In'  %>
+  <h1> Returning User?</h1>
+  <h1>Log In</h1>
+  <%= form_for :login, {url: login_path} do |f| %>
+    <div>
+      <%= f.email_field :email, placeholder: 'email'  %>
+    </div>
+    <div>
+      <%= f.password_field :password, placeholder: "password" %>
+    </div>
+    <%= f.submit 'Log In'  %>
   <% end %>
 </div>

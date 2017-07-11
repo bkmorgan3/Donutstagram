@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
+
   has_attached_file :image,
       styles: { medium: "500x500#", thumb: "100x100#" },
       storage: :s3,
@@ -9,17 +10,14 @@ class Post < ApplicationRecord
       s3_region: ENV["S3_REGION"],
       s3_credentials: Proc.new{ |a| a.instance.s3_credentials }
 
-      def s3_credentials
-        {
-          bucket: ENV["S3_BUCKET_NAME"],
-          access_key_id: ENV["S3_ACCESS_KEY_ID"],
-          secret_access_key: ENV["S3_SECRET_ACCESS_KEY"]
-        }
-      end
+  def s3_credentials
+    {
+      bucket: ENV["S3_BUCKET_NAME"],
+      access_key_id: ENV["S3_ACCESS_KEY_ID"],
+      secret_access_key: ENV["S3_SECRET_ACCESS_KEY"]
+    }
+  end
 
-       validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-
-       validates :user_id, presence: true
+   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+   validates :user_id, presence: true
 end
-#{ content_type: ["image/jpg", "image/jpeg", "image/png"]}
-#do_not_validate_attachment_file_type :image

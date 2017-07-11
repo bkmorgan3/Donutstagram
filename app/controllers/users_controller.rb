@@ -14,16 +14,12 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       @user.email.downcase!
       if @user.save
-        flash[:notice] = "Account created succesfully, #{user.username}"
+        flash[:notice] = "Account created succesfully, #{@user.username}"
         redirect_to login_path
       else
         flash[:notice] = "Ooops, couldnt create account.  Make sure youre using  valid email and password."
         render :new
       end
-    end
-
-    def edit
-
     end
 
     def update
@@ -36,11 +32,6 @@ class UsersController < ApplicationController
       end
     end
 
-    def show
-    end
-
-
-
     private
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
@@ -50,4 +41,3 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
   end
-#    current_user = User.find_by_id(session[:current_user_id])

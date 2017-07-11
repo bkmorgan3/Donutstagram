@@ -16,14 +16,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    p params.inspect
     @post = Post.new(post_params)
     @post.user = User.last
       if @post.save
         redirect_to posts_path
       else
-        p @post.error
-        p params[:post][:image]
         render 'new'
     end
  end
@@ -49,7 +46,6 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       redirect_to edit_post_path
-
     end
   end
 

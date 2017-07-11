@@ -1,18 +1,16 @@
-
-
 <%= form_for @post do |f| %>
-<div class="form-group">
-  <%= f.label :image, 'Image:' %>
-  <%= f.file_field :image %>
-</div>
+  <div class="form-group">
+    <%= f.label :image, 'Image:' %>
+    <%= f.file_field :image %>
+  </div>
 
 
-<div class="form-group">
-  <%= f.label :caption, 'Caption:' %>
-  <%= f.text_field :caption, placeholder: 'Caption...' %>
-</div>
+  <div class="form-group">
+    <%= f.label :caption, 'Caption:' %>
+    <%= f.text_field :caption, placeholder: 'Caption...' %>
+  </div>
 
-<div>
-  <%= f.submit(@post.new_record? ? "Share Donut" : "Update Donut", class: "btn btn-primary") %>
-</div>
-  <% end %>
+  <div>
+    <%= f.submit(@post.new_record? ? "Share Donut" : "Update Donut", class: "btn btn-primary") %>
+  </div>
+<% end %>
