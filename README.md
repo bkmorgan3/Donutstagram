@@ -14,9 +14,9 @@ I used Amazon Web Services for image hosting and the paperclip gem.
 I used the Instagram icon from FontAwesome and a font from GoogleFonts.
 
 ## Wireframes
-The Model Relationship:
-![ScreenShot](/images/erd.png)
-Each individual image:
+The Model Relationship: <br />
+![ScreenShot](/images/erd.png) <br />
+Each individual image: <br />
 ![ScreenShot](/images/image.png)
 
 # Screenshot of the app
