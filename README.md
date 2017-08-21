@@ -1,19 +1,20 @@
-# README <hr>
+# Donutstagram
+This app is an Instagram clone built in Ruby on Rails.  All users will be donut lovers that want to share their favorite donuts.  A user will log in and see all posts from other users.  From there a user will be able to post their own donut image, see other images, or look at all the donuts.
 
 
 #### Please give this a moment while the heroku servers wake up.
-https://donutstagram.herokuapp.com/
-
-This is a project called Donuts-tagram.  It is an instagram clone showcasing LA's best donuts.  A user will
-eat such a great donut in the city that they will take a photo of it and need to share it with the donut community.  
+# A link to Donutstagram.
+https://donutstagram.herokuapp.com/  
 
 
-# Technologies used: <hr>
+# Technologies used
 This project was built in Ruby using Rails.
 Mockup and wire framing were done in Balsamiq.  
-https://donutstagram.mybalsamiq.com/projects/donutstagram/ERD
-I used the IG icon fro FontAwesome, got font from GoogleFonts.
+I used Amazon Web Services for image hosting and the paperclip gem.
+I used the Instagram icon from FontAwesome and a font from GoogleFonts.
 
-
-# Gems installed:<hr>
-paperclip, .env, aws-sdk
+## Wireframes
+The Model Relationship:
+![ScreenShot](erd.png)
+Each individual image:
+![ScreenShot](image.png)
