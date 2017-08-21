@@ -15,6 +15,9 @@ I used the Instagram icon from FontAwesome and a font from GoogleFonts.
 
 ## Wireframes
 The Model Relationship:
-![ScreenShot](erd.png)
+![ScreenShot](/images/erd.png)
 Each individual image:
-![ScreenShot](image.png)
+![ScreenShot](/images/image.png)
+
+# Screenshot of the app
+![ScreenShot](/images/donutstagram.png)
