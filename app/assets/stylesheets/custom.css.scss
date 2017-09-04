@@ -65,3 +65,16 @@ $navbar-default-bg: #42bcf4;
 .fa {
   margin: 5px;
 }
+
+.all-posts img{
+  border: 3px solid black;
+  z-index: -1;
+  content: "";
+  left: 1px;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
