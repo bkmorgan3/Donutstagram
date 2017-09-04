@@ -14,11 +14,11 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       @user.email.downcase!
       if @user.save
-        flash[:notice] = "Account created succesfully, #{@user.username}"
-        redirect_to login_path
+        flash[:success] = "Account created succesfully, #{@user.username}"
+        redirect_to posts_path
       else
-        flash[:notice] = "Ooops, couldnt create account.  Make sure youre using  valid email and password."
-        render :new
+        flash[:danger] = "Ooops, couldnt create account.  Make sure youre using  valid email and password."
+        render 'new'
       end
     end
 
@@ -32,12 +32,24 @@ class UsersController < ApplicationController
       end
     end
 
+    def show
+    end
+
+
     private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:username, :email, :password)
     end
 
     def set_user
         @user = User.find(params[:id])
     end
+
+    def require_same_user
+      if logged_in? && current_user != @user
+        flash[:danger] = "You can only edit your own account"
+        redirect_to root_path
+      end
+    end
+
   end
