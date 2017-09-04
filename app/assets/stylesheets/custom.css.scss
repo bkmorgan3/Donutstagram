@@ -22,6 +22,7 @@ $navbar-default-bg: #42bcf4;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
+  margin-left: 5px;
 }
 
 #logo:hover {
@@ -60,4 +61,7 @@ $navbar-default-bg: #42bcf4;
   margin: 9px;
   padding: 6px;
   color: white;
+}
+.fa {
+  margin: 5px;
 }

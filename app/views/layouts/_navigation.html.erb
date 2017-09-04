@@ -1,11 +1,11 @@
 <div class="container">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <%= link_to "All Donuts", posts_path, class: "navbar-brand", id: "logo" %>
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- Collect the nav links, forms, and other content for toggling -->
         <ul class="nav navbar-nav">
-          <span><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></span>
+          <li><span><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></span></li>
+          <li><%= link_to "All Donuts", posts_path, class: "navbar-brand", id: "logo" %> </li>
             <li>  <%= link_to "Add Donut", new_post_path %> </li>
             <% if current_user %>
               <li class="nav-item">  <%= "User:  #{current_user.username}" %> </li>
