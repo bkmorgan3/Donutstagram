@@ -1,5 +1,6 @@
 <%= render 'layouts/navigation' %>
 <%= form_for @post do |f| %>
+<div align="center" class="container">
   <div class="form-group">
     <%= f.label :caption, 'Caption:' %>
     <%= f.text_field :caption, placeholder: 'Caption...' %>
@@ -11,3 +12,4 @@
   <div class="col-xs-4 col-xs-offset-4">
      <%= link_to "Go back to the donuts", posts_path %>
   </div>
+</div>
