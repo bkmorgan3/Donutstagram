@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         redirect_to posts_path
       else
         flash[:danger] = "Ooops, couldnt create account.  Make sure youre using  valid email and password."
-        render 'new'
+        render "new"
       end
     end
 
