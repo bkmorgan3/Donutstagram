@@ -43,8 +43,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:danger] = "Post was successfully deleted."
-    redirect_to posts_path
+    redirect_to posts_path, flash: {:danger => "Post was successfully deleted."}
   end
 
   private

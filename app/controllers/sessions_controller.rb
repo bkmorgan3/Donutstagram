@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
       #set a cookie so our browser knows
       #we are who we say we are/
       session[:user_id] = user.id
-      flash[:success] = "You have successfully logged in."
-      redirect_to user_path(user)
+
+      redirect_to user_path(user), flash: {success: "You have successfully logged in."}
     else
       #give them another shot at logging in
       # perhaps redirecting to the login form
