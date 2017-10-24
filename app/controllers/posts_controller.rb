@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order('created_at DESC')
-    @comment = Comment.new
   end
 
   def new
@@ -51,14 +50,15 @@ class PostsController < ApplicationController
   def set_donut
     @post = Post.find(params[:id])
   end
+  
   def post_params
     params.require(:post).permit(:image, :caption)
   end
 
   def require_same_user
     if current_user != @post.user
-      flash[:danger] = "You can only edit or delte your own posts."
-      redirect_to root_path
+      flash[:danger] = "You can only edit or delete your own posts."
+      redirect_to posts_path
     end
   end
 

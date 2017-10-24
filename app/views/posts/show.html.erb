@@ -4,7 +4,7 @@
     <%= image_tag(@post.image(:medium)) %>
   </div>
   <div>
-    <%= @post.caption %>
+    <h4><%= @post.caption %></h4>
   </div>
   <a class=" btn btn-xs btn-warning" <%= link_to "Edit", edit_post_path %> </a>
   <a class="btn btn-xs btn-danger" <%= link_to "Delete", post_path(@post.id), method: :delete, data: {confirm: "Are you sure?"} %> </p>
