@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       #we are who we say we are/
       session[:user_id] = user.id
 
-      redirect_to user_path(user), flash: {success: "You have successfully logged in."}
+      redirect_to posts_path, flash: {success: "You have successfully logged in."}
     else
       #give them another shot at logging in
       # perhaps redirecting to the login form
