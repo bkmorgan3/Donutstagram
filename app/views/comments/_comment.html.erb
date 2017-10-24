@@ -2,4 +2,4 @@
 <p><strong>Comment: </strong><%= comment.body %></p>
 <p><%= time_ago_in_words(comment.created_at) %></p>
 
-<p> <%= link_to "Delete", [comment.post,comment], method: :delete,  data: {confirm: "Are you sure?"}%></p>
+<a class="btn btn-xs btn-primary" <%= link_to "Delete", [comment.post,comment], method: :delete,  data: {confirm: "Are you sure?"}%></p>

@@ -3,14 +3,15 @@
 <div class="all-posts" class="container">
     <% @posts.each do |p| %>
       <div class="donut-post">
+          <h3 align="center">Created by: <%= p.user.username %> </h3>
         <div id="donut-image">
         <%= image_tag(p.image(:medium)) %>
         </div>
         <div id="donut-caption">
-          <%= p.caption %>
-          <p>Created by: <%= link_to p.user.username, user_path(p.user) %> </p>
+          <h4><%= p.caption %></h4>
         </div>
-      <p> <%= link_to "Show", post_path(p.id) %> </p>
+      <a class="btn btn-primary" <%= link_to "View", post_path(p.id) %> </a>
     </div>
+
   <% end %>
 </div>

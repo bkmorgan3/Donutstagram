@@ -6,8 +6,8 @@
   <div>
     <%= @post.caption %>
   </div>
-  <p> <%= link_to "Edit", edit_post_path %> </p>
-  <p> <%= link_to "Delete", post_path(@post.id), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+  <a class=" btn btn-xs btn-warning" <%= link_to "Edit", edit_post_path %> </a>
+  <a class="btn btn-xs btn-danger" <%= link_to "Delete", post_path(@post.id), method: :delete, data: {confirm: "Are you sure?"} %> </p>
 
 
 <h2> Comments</h2>
