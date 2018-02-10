@@ -1,0 +1,16 @@
+<% obj.each do |p| %>
+  <div class="donut-post">
+      <h4> <%= p.user.username %> What else could go here?</h4>
+    <div id="donut-image">
+    <%= image_tag(p.image(:medium)) %>
+    </div>
+    <div id="donut-caption">
+      <h4><%= p.caption %></h4>
+      <small>Created by: <%= p.user.username %>,
+        <%= time_ago_in_words(p.created_at) %> ago, <br>
+        last updated: <%= time_ago_in_words(p.updated_at) %> ago.</small>
+    </div>
+  <a class="btn btn-primary" <%= link_to "View", post_path(p.id) %> </a>
+</div>
+
+<% end %>
