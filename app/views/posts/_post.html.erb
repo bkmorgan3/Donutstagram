@@ -9,7 +9,7 @@
       <small>Created by: <%= p.user.username %>,
         <%= time_ago_in_words(p.created_at) %> ago, <br>
         last updated: <%= time_ago_in_words(p.updated_at) %> ago.</small>
-    <% if logged_in? && current_user == p.user %>
+    <% if logged_in? && (current_user == p.user || current_user.admin?) %>
       <a class="btn btn-xs btn-warning" <%= link_to "Edit", edit_post_path(p.id) %> </a>
       <a class="btn btn-xs btn-danger" <%= link_to "Delete", post_path(p.id), method: :delete, data: {confirm: "Are you sure?"} %> </p>
     <% end %>
