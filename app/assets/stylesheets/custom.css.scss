@@ -2,18 +2,14 @@ $navbar-default-bg: #42bcf4;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-
-
 #greeting {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-weight: bold;
   font-size: 80px;
   text-align: center;
   margin-left: 400px;
   margin-top: 100px;
 }
-
 
 #logo {
   float: left;
@@ -48,7 +44,7 @@ $navbar-default-bg: #42bcf4;
   height: 640px;
 }
 
-#logout-button{
+#logout-button {
   float: right;
   text-decoration: none;
   padding: 15px;
@@ -57,7 +53,7 @@ $navbar-default-bg: #42bcf4;
   color: black;
   font-weight: bold;
 }
-.nav-item{
+.nav-item {
   margin: 9px;
   padding: 6px;
   color: white;
@@ -70,7 +66,12 @@ $navbar-default-bg: #42bcf4;
   background-color: #eaeaea;
 }
 
-.all-posts img{
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.all-posts img {
   border: 3px solid black;
   z-index: -1;
   content: "";

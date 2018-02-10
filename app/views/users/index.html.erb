@@ -2,9 +2,14 @@
 
 <h1>the users page</h1>
 <div class="jumbotron">
-  <ul>
-    <% @users.each do |u| %>
-    <li class="list-group-item"><%= link_to u.username, user_path(u) %></li>
-  <% end %>
-  </ul>
+  <div align="center"><%= will_paginate %>
+
+    <ul>
+      <% @users.each do |u| %>
+      <li class="list-group-item"><%= link_to u.username, user_path(u) %></li>
+      <li class="listing"><small><%= pluralize(u.posts.count, "post") if u.posts %></small></li>
+    <% end %>
+    </ul>
+    <%= will_paginate %>
+  </div>
 </div>

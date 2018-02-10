@@ -1,6 +1,6 @@
 <% obj.each do |p| %>
   <div class="donut-post">
-      <h4> <%= p.user.username %> What else could go here?</h4>
+      <h4> <%= link_to p.user.username, user_path(p.user) %> What else could go here?</h4>
     <div id="donut-image">
     <%= image_tag(p.image(:medium)) %>
     </div>
@@ -9,8 +9,12 @@
       <small>Created by: <%= p.user.username %>,
         <%= time_ago_in_words(p.created_at) %> ago, <br>
         last updated: <%= time_ago_in_words(p.updated_at) %> ago.</small>
-    </div>
+    <% if logged_in? && current_user == p.user %>
+      <a class="btn btn-xs btn-warning" <%= link_to "Edit", edit_post_path(p.id) %> </a>
+      <a class="btn btn-xs btn-danger" <%= link_to "Delete", post_path(p.id), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+    <% end %>
   <a class="btn btn-primary" <%= link_to "View", post_path(p.id) %> </a>
+</div>
 </div>
 
 <% end %>

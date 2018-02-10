@@ -4,7 +4,8 @@ class PostsController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.order('created_at DESC')
+    @posts = Post.paginate(page: params[:page], per_page: 4)
+
   end
 
   def new
@@ -50,7 +51,7 @@ class PostsController < ApplicationController
   def set_donut
     @post = Post.find(params[:id])
   end
-  
+
   def post_params
     params.require(:post).permit(:image, :caption)
   end

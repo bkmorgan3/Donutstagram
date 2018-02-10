@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  def home
+  def index
     redirect_to posts_path if logged_in?
   end
 

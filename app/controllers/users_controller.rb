@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   #to authorize to see user without being loggged in
   #before_action :authorize
     def index
-      @users = User.all
+      @users = User.paginate(page: params[:page], per_page: 4)
     end
 
     def new
@@ -22,6 +22,9 @@ class UsersController < ApplicationController
       end
     end
 
+    def edit
+    end
+
     def update
       @user = User.find(params[:id])
       if @user.update(user_params)
@@ -34,6 +37,7 @@ class UsersController < ApplicationController
 
     def show
       @user = User.find(params[:id])
+      @user_posts = @user.posts.paginate(page: params[:page], per_page: 4)
     end
 
 

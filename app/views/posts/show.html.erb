@@ -1,14 +1,17 @@
 
 <div class="all-posts">
+  <h4>Created By: <%= link_to @post.user.username, user_path(@post.user) %></h4>
+  <small><%= pluralize(@post.user.posts.count, "post") if @post.user.posts %></small>
   <div>
     <%= image_tag(@post.image(:medium)) %>
   </div>
   <div>
     <h4><%= @post.caption %></h4>
   </div>
-  <a class=" btn btn-xs btn-warning" <%= link_to "Edit", edit_post_path %> </a>
-  <a class="btn btn-xs btn-danger" <%= link_to "Delete", post_path(@post.id), method: :delete, data: {confirm: "Are you sure?"} %> </p>
-
+  <% if logged_in? and current_user == @post.user %>
+    <a class=" btn btn-xs btn-warning" <%= link_to "Edit", edit_post_path %> </a>
+    <a class="btn btn-xs btn-danger" <%= link_to "Delete", post_path(@post.id), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+  <% end %>
 
 <h2> Comments</h2>
 <%= render @post.comments %>
