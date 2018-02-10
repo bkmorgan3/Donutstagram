@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       @user.email.downcase!
       if @user.save
+        session[:user_id] = @user.id
         flash[:success] = "Account created succesfully, #{@user.username}"
         redirect_to posts_path
       else
